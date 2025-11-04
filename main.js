@@ -1,1 +1,5 @@
-console.log("Hola mundo con Js!!");
+function main() {
+  console.log("Hola mundo con Js!!");
+}
+
+main();
