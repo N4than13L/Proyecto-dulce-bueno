@@ -1,94 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Repostería Dulce Bueno</title>
-    <link rel="stylesheet" href="index.css" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Reposteria Dulce Bueno</title>
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="css/navegacion-scroll.css" rel="stylesheet" />
+    <link href="css/card.css" rel="stylesheet" />
+    <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   </head>
+
   <body>
-    <header>
-      <nav class="nav">
-        <h1 id="logo">Repostería Dulce Bueno</h1>
-        <ul>
-          <li><a href="#home">Inicio</a></li>
-          <li><a href="#products">Productos</a></li>
-          <li><a href="#about">Nosotros</a></li>
-          <li><a href="#contact">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <div class="banner">
-      <img src="/img/cake_home.jpg" alt="Imagen de Repostería" />
+    <div class="cabecera">
+      <img src="images/reposteria_banner1.jpg" alt="Roald Amundsen" />
+      <!-- <div class="cabecera__bloque1">
+        <img src="images/Amundsen.jpg" alt="Roald Amundsen" />
+      </div> -->
+      <!-- <div class="cabecera__bloque2"> -->
+      <!-- <img src="images/Scott.jpg" alt="Robert Falcon Scott" /> -->
+      <!-- </div> -->
+      <div class="cabecera__titulo"><h1>Reposteria Dulce Bueno</h1></div>
     </div>
-
-    <!-- productos -->
-    <section class="productos" >
-      <h2>Productos </h2>
-        <div class="producto">
-          <img class="producto__imagen" src="./img/cake1.jpg" alt="Pastel de Chocolate"/>
-          <h3>Pastel de Chocolate</h3>
-          <p>Delicioso pastel de chocolate con cobertura de ganache.</p>
-          <span class="price">$20.00</span>
-        </div>
-
-        <div class="producto">
-          <img class="producto__imagen" src="./img/cake2.jpg" alt="Tarta de Fresas" />
-          <h3>Tarta de Fresas</h3>
-          <p>Tarta fresca con crema y fresas naturales.</p>
-          <span class="price">$18.00</span>
-        </div>
-
-        <div class="producto">
-          <img class="producto__imagen" src="./img/cake3.jpg" alt="Cupcakes Variados" />
-          <h3>Cupcakes Variados</h3>
-          <p>Variedad de cupcakes con diferentes sabores y decoraciones.</p>
-          <span class="price">$2.50 c/u</span>
-        </div>
-        
-        <div class="producto">
-          <img class="producto__imagen" src="./img/cake2.jpg" alt="Cupcakes Variados" />
-          <h3>Cupcakes Variados</h3>
-          <p>Variedad de cupcakes con diferentes sabores y decoraciones.</p>
-          <span class="price">$2.50 c/u</span>
-        </div>
-   
-    </section>
-
-    <section class="sobre_nosotros">
-      <h2>Nosotros</h2>
-      <p>En Repostería Dulce Bueno, nos apasiona crear deliciosos postres que endulzan la vida. Utilizamos ingredientes de la más alta calidad y recetas tradicionales para ofrecerte una experiencia única en cada bocado.</p>
-    </section>
-
-    <section id="contact" class="contacto">
-      <h2>Contacto</h2>
-      <p>¿Tienes alguna pregunta o quieres hacer un pedido especial? Contáctanos a través de los siguientes medios:</p>
+    <nav class="navegacion">
       <ul>
-        <li>Teléfono: +34 123 456 789</li>
-        <li>Email: info@dulcebuenoreposteria.com</li>
+        <li><a href="#">Ininio</a></li>
+        <li><a href="#">Sobre Nosotros</a></li>
+        <li><a href="#">Productos</a></li>
+        <li><a href="#">Contactos</a></li>
       </ul>
+    </nav>
 
-      <form>
-        <div class="grupo-formulario">
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name" required />
-</div>
-<div class="grupo-formulario">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-</div>
-<div class="grupo-formulario">
-        <label for="message">Mensaje:</label>
-        <textarea id="message" name="message" required></textarea>
-</div>
-        <button class="submit" type="submit">Enviar</button>
+    <!-- Sobre Nosotros -->
+    <article class="articulo" id="about">
+      <!-- <p class="articulo__entradilla"></p> -->
+      <h1>Sobre Nosotros</h1>
+      <p>
+        En Dulce Bueno creemos que cada postre cuenta una historia. Somos una
+        repostería artesanal dedicada a crear momentos dulces e inolvidables con
+        cada bocado. Elaboramos nuestros productos con ingredientes frescos,
+        recetas caseras y un toque de amor que se nota en el sabor. Desde
+        pasteles personalizados hasta cupcakes y galletas decoradas, combinamos
+        creatividad, calidad y pasión para ofrecerte lo mejor de la repostería
+        moderna sin perder la esencia tradicional. Nuestro objetivo es endulzar
+        tu día y hacer que cada ocasión sea simplemente… dulce y buena.
+      </p>
+      <div class="imagen">
+        <img src="images/img2.jpg" alt="El Fram y los perros" />
+      </div>
+    </article>
+
+    <article class="articulo" id="products">
+      <h1>Productos</h1>
+      <p>
+        En Dulce Bueno encontrarás una deliciosa variedad de postres hechos con
+        dedicación y los mejores ingredientes. Ofrecemos pasteles personalizados
+        para toda ocasión —cumpleaños, bodas, aniversarios y eventos
+        especiales—, así como cupcakes, galletas decoradas, brownies, tartas
+        frutales, cheesecakes y postres fríos. Cada creación es elaborada de
+        forma artesanal, cuidando los detalles en sabor, textura y presentación.
+      </p>
+
+      <h2>Resposteria</h2>
+      <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg" alt="Producto 1" />
+        <p>Pastel de Chocolate</p>
+        <p>precio: $20</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="https://images.pexels.com/photos/7525196/pexels-photo-7525196.jpeg" alt="Producto 2" />
+        <p>Pastel de Vainilla</p>
+        <p>precio: $18</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="https://images.pexels.com/photos/18382832/pexels-photo-18382832.jpeg" alt="Producto 3" />
+        <p>Pastel de Fresa</p>
+        <p>precio: $22</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="https://images.pexels.com/photos/10342005/pexels-photo-10342005.jpeg" alt="Producto 4" />
+        <p>Pastel de Red Velvet</p>
+        <p>precio: $25</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="https://images.pexels.com/photos/6133311/pexels-photo-6133311.jpeg" alt="Producto 5" />
+        <p>Pastel de Limón</p>
+        <p>precio: $19</p>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+    </article>
+
+    <article class="articulo" id="contact">
+      <h1>Contactos</h1>
+      <p>
+        ¿Tienes alguna pregunta o quieres hacer un pedido personalizado? ¡Nos
+        encantaría saber de ti! Puedes contactarnos a través de los siguientes
+        medios:
+      </p>
+      <form id="form">
+        <label for="name">Nombre:</label><br />
+        <input type="text" id="name" name="name" required /><br /><br />
+
+        <label for="email">Correo Electrónico:</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <label for="message">Mensaje:</label><br />
+        <textarea id="message" name="message" rows="4" required></textarea
+        ><br /><br />
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
       </form>
-    </section>
 
-    <footer>
-      <p>&copy; 2025 Repostería Dulce Bueno. Todos los derechos reservados.</p>
+    <footer class="footer">
+      La conquista del Polo Sur. Javier Usobiaga, 2019.
+    </footer>
+    <script src="navegacion-scroll.js"></script>
+    <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script src="main.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 4,
+  centeredSlides: true,
+  spaceBetween: 30,
+  grabCursor: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+  </script>
   </body>
 </html>
