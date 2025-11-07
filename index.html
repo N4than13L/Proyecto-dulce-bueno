@@ -195,8 +195,10 @@
         <button type="submit" class="btn btn-primary">Enviar</button>
       </form>
 
+      
     <footer class="footer">
       La conquista del Polo Sur. Javier Usobiaga, 2019.
+      <button class="arriba">Ir arriba</button>
     </footer>
     <script src="navegacion-scroll.js"></script>
    
@@ -204,6 +206,22 @@
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+  <script>
+    const btnArriba = document.querySelector('.arriba');
+
+      window.addEventListener('scroll', () => {
+      if(window.scrollY > 200){
+      btnArriba.classList.add('visible');
+      } else {
+      btnArriba.classList.remove('visible');
+      }
+      });
+
+
+btnArriba.addEventListener('click', () => {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+  </script>
   <script>
 var swiper = new Swiper(".mySwiper", {
       slidesPerView: 1,
