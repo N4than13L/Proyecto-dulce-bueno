@@ -50,6 +50,22 @@ p {
   margin-top: 0;
 }
 
+.arriba {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background-color: #004e92;
+  color: #fafafa;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
 button {
   background-color: #004e92;
   padding: 10px;
