@@ -195,60 +195,18 @@
         <button type="submit" class="btn btn-primary">Enviar</button>
       </form>
 
-      
+      <button class="arriba">↑</button>
     <footer class="footer">
-      La conquista del Polo Sur. Javier Usobiaga, 2019.
-      <button class="arriba">Ir arriba</button>
+      <p>&copy; 2025 Reposteria Dulce Bueno. Todos los derechos reservados.</p>
+      
     </footer>
-    <script src="navegacion-scroll.js"></script>
+    <script src="./js/navegacion-scroll.js"></script>
    
 
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <script>
-    const btnArriba = document.querySelector('.arriba');
-
-      window.addEventListener('scroll', () => {
-      if(window.scrollY > 200){
-      btnArriba.classList.add('visible');
-      } else {
-      btnArriba.classList.remove('visible');
-      }
-      });
-
-
-btnArriba.addEventListener('click', () => {
-window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-  </script>
-  <script>
-var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      centeredSlides: false,
-      slidesPerGroupSkip: 1,
-      grabCursor: true,
-      keyboard: {
-        enabled: true,
-      },
-      breakpoints: {
-        769: {
-          slidesPerView: 2,
-          slidesPerGroup: 2,
-        },
-      },
-      scrollbar: {
-        el: ".swiper-scrollbar",
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  </script>
+  <script src="js/swiper.js"></script>
+  <script src="/js/scroll.js"></script>
+  
   </body>
 </html>
