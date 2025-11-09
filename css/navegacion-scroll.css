@@ -1,13 +1,13 @@
 .navegacion {
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 78, 146, 0.1);
+  background-color: rgba(196, 140, 20, 0.1);
   transition: background-color 0.3s;
 }
 
 .navegacion.scroll {
-  background-color: rgba(0, 78, 146, 1);
+  background-color: rgb(169, 118, 9);
 }

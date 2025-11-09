@@ -50,11 +50,16 @@ p {
   margin-top: 0;
 }
 
+.center {
+  text-align: center;
+  align-items: center;
+}
+
 .arriba {
   position: fixed;
   bottom: 90px;
   right: 20px;
-  background-color: #004e92;
+  background-color: rgb(169, 118, 9);
   color: #fafafa;
   border: none;
   border-radius: 50%;
@@ -67,16 +72,16 @@ p {
 }
 
 button {
-  background-color: #004e92;
+  background-color: rgb(169, 118, 9);
   padding: 10px;
-  border: 1px solid #004e92;
+  border: 1px solid rgb(169, 118, 9);
   border-radius: 30px;
   color: #fafafa;
   margin-bottom: 30px;
 }
 
 button:hover {
-  background-color: #000428;
+  background-color: #c17426;
   /* border: 1px solid #000428; */
   cursor: pointer;
   transition: 0.3s ease;
@@ -93,7 +98,7 @@ textarea {
 }
 
 .cabecera {
-  background: linear-gradient(38deg, #000428, #004e92);
+  background: linear-gradient(90deg, #b5601f, #925a00);
   color: #fafafa;
   display: flex;
   flex-direction: column;
@@ -130,7 +135,7 @@ textarea {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 3em;
+  padding: 4em;
 }
 
 @media (min-width: 40em) {
@@ -156,7 +161,7 @@ textarea {
 .articulo__entradilla {
   margin: 2em 0;
   font-weight: 600;
-  color: #004e92;
+  color: rgb(169, 118, 9);
   text-align: justify;
   hyphens: auto;
 }
@@ -176,7 +181,7 @@ textarea {
 }
 
 .articulo__entradilla + p::first-letter {
-  color: #004e92;
+  color: rgb(169, 118, 9);
   font-size: 12rem;
   line-height: 0.75;
   float: left;
@@ -204,7 +209,7 @@ textarea {
 
 .footer {
   color: #fafafa;
-  background-color: #112b42;
+  background-color: rgb(100, 74, 17);
   font-size: 80%;
   font-style: italic;
   padding: 1rem 1.5rem;
