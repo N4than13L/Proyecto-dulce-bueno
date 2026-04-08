@@ -1,5 +1,5 @@
 function navegacionScroll() {
-  var elementoNavegacion = document.querySelector(".navegacion");
+  var elementoNavegacion = document.querySelector(".navbar");
   var navegacionAltura = elementoNavegacion.clientHeight;
   var elementoReferencia = document.querySelector(".cabecera");
 
@@ -15,4 +15,4 @@ function navegacionScroll() {
   window.addEventListener("scroll", revisarPosicion);
 }
 
-navegacionScroll();
+// navegacionScroll();
