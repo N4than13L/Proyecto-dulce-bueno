@@ -15,4 +15,4 @@ function navegacionScroll() {
   window.addEventListener("scroll", revisarPosicion);
 }
 
-// navegacionScroll();
+navegacionScroll();
