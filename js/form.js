@@ -91,6 +91,12 @@
     status.classList.remove("is-visible", "is-success", "is-error");
   }
 
+  function avisarEnvio() {
+    document.dispatchEvent(
+      new CustomEvent("dulcebueno:lead", { detail: { form: "contacto" } })
+    );
+  }
+
   Object.keys(campos).forEach(function (clave) {
     var campo = campos[clave];
     if (!campo.input) return;
@@ -138,6 +144,7 @@
       );
       form.reset();
       limpiarTodosLosErrores();
+      avisarEnvio();
       return;
     }
 
@@ -161,6 +168,7 @@
       );
       form.reset();
       limpiarTodosLosErrores();
+      avisarEnvio();
     } catch (error) {
       mostrarEstado(
         "No pudimos enviar tu mensaje. Inténtalo de nuevo o contáctanos por teléfono.",

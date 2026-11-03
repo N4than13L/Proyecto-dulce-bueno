@@ -200,7 +200,7 @@ a:hover {
       rgba(246, 227, 207, 0.9),
       transparent 40%
     ),
-    var(--color-bg);
+    transparent;
   scroll-margin-top: var(--navbar-height);
 }
 
@@ -319,11 +319,15 @@ a:hover {
 }
 
 .section--products {
-  background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 250, 244, 0.72) 0%,
+    rgba(253, 248, 242, 0.35) 100%
+  );
 }
 
 .section--testimonials {
-  background-color: var(--color-bg-alt);
+  background-color: rgba(255, 250, 244, 0.72);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
@@ -364,6 +368,7 @@ a:hover {
 }
 
 .about__media {
+  overflow: hidden;
   border-radius: var(--radius-lg);
   background-color: var(--color-accent-soft);
 }
@@ -689,6 +694,11 @@ a:hover {
 }
 
 .footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
   padding-top: 1.25rem;
   color: rgba(255, 255, 255, 0.65);
   font-size: 0.85rem;
@@ -696,6 +706,69 @@ a:hover {
 
 .footer__bottom p {
   margin: 0;
+}
+
+.footer__cookie {
+  padding: 0;
+  background: none;
+  border: 0;
+  color: rgba(255, 255, 255, 0.75);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer__cookie:hover {
+  color: #ffffff;
+}
+
+/* =========================================================
+   Banner de consentimiento
+   ========================================================= */
+.cookie-banner {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.5rem;
+  left: 1.25rem;
+  z-index: 1080;
+  max-width: 44rem;
+  margin-inline: auto;
+  padding: 1.25rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.cookie-banner[hidden] {
+  display: none !important;
+}
+
+.cookie-banner__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cookie-banner__title {
+  margin: 0 0 0.25rem;
+  color: var(--color-primary-dark);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.cookie-banner__text {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  gap: 0.5rem;
 }
 
 /* =========================================================
@@ -733,6 +806,77 @@ a:hover {
 
 .arriba:hover {
   background-color: var(--color-primary-dark);
+}
+
+/* =========================================================
+   Fondo decorativo animado
+   ========================================================= */
+.fondo-decor {
+  position: fixed;
+  inset: -12vh -8vw;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.fondo-decor__blob {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+.fondo-decor__blob--1 {
+  top: -4rem;
+  left: -6rem;
+  width: 34rem;
+  height: 34rem;
+  background: radial-gradient(
+    circle,
+    rgba(201, 123, 61, 0.4) 0%,
+    rgba(201, 123, 61, 0) 68%
+  );
+}
+
+.fondo-decor__blob--2 {
+  top: 30%;
+  right: -8rem;
+  width: 38rem;
+  height: 38rem;
+  background: radial-gradient(
+    circle,
+    rgba(122, 63, 29, 0.2) 0%,
+    rgba(122, 63, 29, 0) 70%
+  );
+}
+
+.fondo-decor__blob--3 {
+  bottom: -10rem;
+  left: 16%;
+  width: 30rem;
+  height: 30rem;
+  background: radial-gradient(
+    circle,
+    rgba(246, 227, 207, 0.95) 0%,
+    rgba(246, 227, 207, 0) 68%
+  );
+}
+
+@media (max-width: 767.98px) {
+  .fondo-decor__blob--1 {
+    width: 22rem;
+    height: 22rem;
+  }
+
+  .fondo-decor__blob--2 {
+    width: 24rem;
+    height: 24rem;
+  }
+
+  .fondo-decor__blob--3 {
+    width: 20rem;
+    height: 20rem;
+  }
 }
 
 /* =========================================================
@@ -783,6 +927,20 @@ textarea:focus-visible {
 
   .section__header {
     margin-bottom: 1.75rem;
+  }
+
+  .cookie-banner {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    left: 0.75rem;
+  }
+
+  .cookie-banner__actions {
+    width: 100%;
+  }
+
+  .cookie-banner__actions .btn {
+    flex: 1;
   }
 }
 

@@ -4,12 +4,16 @@
 
   var secciones = document.querySelectorAll("header[id], section[id]");
   var enlaces = document.querySelectorAll(".navbar .nav-link");
+  var margenActivo = 0;
+  var actualizacionPendiente = false;
 
   function actualizarAlturaNavbar() {
+    var altura = navbar.offsetHeight;
     document.documentElement.style.setProperty(
       "--navbar-height",
-      navbar.offsetHeight + "px"
+      altura + "px"
     );
+    margenActivo = altura + 40;
   }
 
   function actualizarEstadoScroll() {
@@ -19,7 +23,7 @@
   function actualizarEnlaceActivo() {
     if (!secciones.length || !enlaces.length) return;
 
-    var margen = navbar.offsetHeight + 40;
+    var margen = margenActivo;
     var seccionActual = secciones[0];
 
     secciones.forEach(function (seccion) {
@@ -41,8 +45,14 @@
   }
 
   function alScrollear() {
-    actualizarEstadoScroll();
-    actualizarEnlaceActivo();
+    if (actualizacionPendiente) return;
+
+    actualizacionPendiente = true;
+    window.requestAnimationFrame(function () {
+      actualizarEstadoScroll();
+      actualizarEnlaceActivo();
+      actualizacionPendiente = false;
+    });
   }
 
   actualizarAlturaNavbar();

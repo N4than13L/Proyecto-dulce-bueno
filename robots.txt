@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Cuando el sitio tenga dominio público, añade la línea del sitemap:
+# Sitemap: https://tu-dominio.com/sitemap.xml

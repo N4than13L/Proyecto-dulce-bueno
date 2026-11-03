@@ -9,7 +9,21 @@
       content="Repostería artesanal Dulce Bueno: pasteles personalizados, cupcakes, galletas, jugos naturales y café. Pedidos para cumpleaños, bodas y eventos especiales."
     />
     <meta name="theme-color" content="#7a3f1d" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large"
+    />
+    <meta name="author" content="Dulce Bueno" />
+    <meta name="application-name" content="Dulce Bueno" />
+    <meta name="apple-mobile-web-app-title" content="Dulce Bueno" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>Dulce Bueno | Repostería Artesanal</title>
+
+    <!-- Iconos y PWA -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
 
     <!-- Open Graph y redes sociales -->
     <meta property="og:type" content="website" />
@@ -28,6 +42,8 @@
       content="https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop"
     />
     <meta property="og:image:alt" content="Pastel artesanal de Dulce Bueno" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -41,17 +57,22 @@
       name="twitter:image"
       content="https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop"
     />
+    <meta name="twitter:image:alt" content="Pastel artesanal de Dulce Bueno" />
+
+    <!-- Cuando el sitio tenga dominio público, añade canonical y og:url:
+      <link rel="canonical" href="https://tu-dominio.com/" />
+      <meta property="og:url" content="https://tu-dominio.com/" />
+    -->
 
     <!-- Preconexiones y precarga de la imagen principal -->
-    <link rel="preconnect" href="https://images.pexels.com" />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link
       rel="preload"
       as="image"
-      href="https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop"
+      href="images/hero-pastel-1200.jpg"
       imagesrcset="
-        https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop   800w,
-        https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop 1200w
+        images/hero-pastel-800.jpg   800w,
+        images/hero-pastel-1200.jpg 1200w
       "
       imagesizes="(max-width: 991.98px) 100vw, 560px"
     />
@@ -60,12 +81,100 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Bakery",
-        "name": "Dulce Bueno",
-        "description": "Repostería artesanal especializada en pasteles personalizados, cupcakes, galletas, jugos naturales y café.",
-        "image": "https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop",
-        "priceRange": "$$",
-        "servesCuisine": "Repostería artesanal"
+        "@graph": [
+          {
+            "@type": "Bakery",
+            "@id": "#bakery",
+            "name": "Dulce Bueno",
+            "description": "Repostería artesanal especializada en pasteles personalizados, cupcakes, galletas, jugos naturales y café.",
+            "image": "https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop",
+            "priceRange": "$$",
+            "servesCuisine": "Repostería artesanal",
+            "inLanguage": "es",
+            "hasMenu": { "@id": "#menu" }
+          },
+          {
+            "@type": "Menu",
+            "@id": "#menu",
+            "name": "Menú Dulce Bueno",
+            "inLanguage": "es",
+            "hasMenuSection": [
+              {
+                "@type": "MenuSection",
+                "name": "Pasteles",
+                "hasMenuItem": [
+                  {
+                    "@type": "MenuItem",
+                    "name": "Pastel de Vainilla",
+                    "description": "Bizcocho esponjoso con crema de vainilla."
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Pastel de Fresa",
+                    "description": "Capas de bizcocho y fresas frescas."
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Pastel de Red Velvet",
+                    "description": "Terciopelo rojo con frosting de queso crema."
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Pastel de Limón",
+                    "description": "Toque cítrico con un glaseado suave."
+                  }
+                ]
+              },
+              {
+                "@type": "MenuSection",
+                "name": "Jugos naturales",
+                "hasMenuItem": [
+                  {
+                    "@type": "MenuItem",
+                    "name": "Jugo de Manzana",
+                    "description": "Refrescante, natural y lleno de sabor."
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Jugo de Fresa",
+                    "description": "Fresas frescas con un toque dulce."
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Jugo de Morisoñando",
+                    "description": "La receta de la casa, bien fría."
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Jugo de Limón",
+                    "description": "Cítrico, fresco y equilibrado."
+                  }
+                ]
+              },
+              {
+                "@type": "MenuSection",
+                "name": "Café",
+                "hasMenuItem": [
+                  {
+                    "@type": "MenuItem",
+                    "name": "Café Espresso",
+                    "description": "Intenso, aromático y recién preparado."
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Café Americano",
+                    "description": "Suave, para disfrutar sin prisa."
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Café con Leche",
+                    "description": "Cremoso y equilibrado, con leche vaporizada."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     </script>
 
@@ -85,6 +194,13 @@
 
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+    <!-- Fondo decorativo animado con GSAP -->
+    <div class="fondo-decor" aria-hidden="true">
+      <span class="fondo-decor__blob fondo-decor__blob--1"></span>
+      <span class="fondo-decor__blob fondo-decor__blob--2"></span>
+      <span class="fondo-decor__blob fondo-decor__blob--3"></span>
+    </div>
 
     <!-- Navegación -->
     <nav class="navbar navbar-expand-lg fixed-top" aria-label="Navegación principal">
@@ -156,10 +272,10 @@
 
         <div class="hero__media">
           <img
-            src="https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop"
+            src="images/hero-pastel-1200.jpg"
             srcset="
-              https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop   800w,
-              https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop 1200w
+              images/hero-pastel-800.jpg   800w,
+              images/hero-pastel-1200.jpg 1200w
             "
             sizes="(max-width: 991.98px) 100vw, 560px"
             alt="Pastel artesanal decorado de Dulce Bueno"
@@ -252,10 +368,10 @@
               <article class="product-card">
                 <div class="product-card__media">
                   <img
-                    src="https://images.pexels.com/photos/7525196/pexels-photo-7525196.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    src="images/pastel-vainilla-800.jpg"
                     srcset="
-                      https://images.pexels.com/photos/7525196/pexels-photo-7525196.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
-                      https://images.pexels.com/photos/7525196/pexels-photo-7525196.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                      images/pastel-vainilla-400.jpg   400w,
+                      images/pastel-vainilla-800.jpg 800w
                     "
                     sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
                     alt="Pastel de vainilla decorado"
@@ -285,10 +401,10 @@
               <article class="product-card">
                 <div class="product-card__media">
                   <img
-                    src="https://images.pexels.com/photos/18382832/pexels-photo-18382832.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    src="images/pastel-fresa-800.jpg"
                     srcset="
-                      https://images.pexels.com/photos/18382832/pexels-photo-18382832.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
-                      https://images.pexels.com/photos/18382832/pexels-photo-18382832.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                      images/pastel-fresa-400.jpg   400w,
+                      images/pastel-fresa-800.jpg 800w
                     "
                     sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
                     alt="Pastel de fresa con fresas frescas"
@@ -318,10 +434,10 @@
               <article class="product-card">
                 <div class="product-card__media">
                   <img
-                    src="https://images.pexels.com/photos/10342005/pexels-photo-10342005.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    src="images/pastel-red-velvet-800.jpg"
                     srcset="
-                      https://images.pexels.com/photos/10342005/pexels-photo-10342005.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
-                      https://images.pexels.com/photos/10342005/pexels-photo-10342005.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                      images/pastel-red-velvet-400.jpg   400w,
+                      images/pastel-red-velvet-800.jpg 800w
                     "
                     sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
                     alt="Pastel red velvet con frosting"
@@ -351,10 +467,10 @@
               <article class="product-card">
                 <div class="product-card__media">
                   <img
-                    src="https://images.pexels.com/photos/6133311/pexels-photo-6133311.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    src="images/pastel-limon-800.jpg"
                     srcset="
-                      https://images.pexels.com/photos/6133311/pexels-photo-6133311.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
-                      https://images.pexels.com/photos/6133311/pexels-photo-6133311.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                      images/pastel-limon-400.jpg   400w,
+                      images/pastel-limon-800.jpg 800w
                     "
                     sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
                     alt="Pastel de limón glaseado"
@@ -394,10 +510,10 @@
               <article class="product-card">
                 <div class="product-card__media">
                   <img
-                    src="https://images.pexels.com/photos/17612805/pexels-photo-17612805.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    src="images/jugo-manzana-800.jpg"
                     srcset="
-                      https://images.pexels.com/photos/17612805/pexels-photo-17612805.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
-                      https://images.pexels.com/photos/17612805/pexels-photo-17612805.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                      images/jugo-manzana-400.jpg   400w,
+                      images/jugo-manzana-800.jpg 800w
                     "
                     sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
                     alt="Jugo natural de manzana"
@@ -427,10 +543,10 @@
               <article class="product-card">
                 <div class="product-card__media">
                   <img
-                    src="https://images.pexels.com/photos/33283858/pexels-photo-33283858.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    src="images/jugo-fresa-800.jpg"
                     srcset="
-                      https://images.pexels.com/photos/33283858/pexels-photo-33283858.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
-                      https://images.pexels.com/photos/33283858/pexels-photo-33283858.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                      images/jugo-fresa-400.jpg   400w,
+                      images/jugo-fresa-800.jpg 800w
                     "
                     sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
                     alt="Jugo natural de fresa"
@@ -460,10 +576,10 @@
               <article class="product-card">
                 <div class="product-card__media">
                   <img
-                    src="https://images.pexels.com/photos/20104011/pexels-photo-20104011.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    src="images/jugo-morisonando-800.jpg"
                     srcset="
-                      https://images.pexels.com/photos/20104011/pexels-photo-20104011.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
-                      https://images.pexels.com/photos/20104011/pexels-photo-20104011.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                      images/jugo-morisonando-400.jpg   400w,
+                      images/jugo-morisonando-800.jpg 800w
                     "
                     sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
                     alt="Jugo de morisoñando"
@@ -493,10 +609,10 @@
               <article class="product-card">
                 <div class="product-card__media">
                   <img
-                    src="https://images.pexels.com/photos/30956225/pexels-photo-30956225.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    src="images/jugo-limon-800.jpg"
                     srcset="
-                      https://images.pexels.com/photos/30956225/pexels-photo-30956225.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
-                      https://images.pexels.com/photos/30956225/pexels-photo-30956225.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                      images/jugo-limon-400.jpg   400w,
+                      images/jugo-limon-800.jpg 800w
                     "
                     sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
                     alt="Jugo natural de limón"
@@ -536,10 +652,10 @@
               <article class="product-card">
                 <div class="product-card__media">
                   <img
-                    src="https://images.pexels.com/photos/16230546/pexels-photo-16230546.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    src="images/cafe-espresso-800.jpg"
                     srcset="
-                      https://images.pexels.com/photos/16230546/pexels-photo-16230546.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
-                      https://images.pexels.com/photos/16230546/pexels-photo-16230546.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                      images/cafe-espresso-400.jpg   400w,
+                      images/cafe-espresso-800.jpg 800w
                     "
                     sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
                     alt="Café espresso"
@@ -569,10 +685,10 @@
               <article class="product-card">
                 <div class="product-card__media">
                   <img
-                    src="https://images.pexels.com/photos/16230539/pexels-photo-16230539.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    src="images/cafe-americano-800.jpg"
                     srcset="
-                      https://images.pexels.com/photos/16230539/pexels-photo-16230539.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
-                      https://images.pexels.com/photos/16230539/pexels-photo-16230539.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                      images/cafe-americano-400.jpg   400w,
+                      images/cafe-americano-800.jpg 800w
                     "
                     sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
                     alt="Café americano"
@@ -602,10 +718,10 @@
               <article class="product-card">
                 <div class="product-card__media">
                   <img
-                    src="https://images.pexels.com/photos/13518238/pexels-photo-13518238.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    src="images/cafe-con-leche-800.jpg"
                     srcset="
-                      https://images.pexels.com/photos/13518238/pexels-photo-13518238.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
-                      https://images.pexels.com/photos/13518238/pexels-photo-13518238.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                      images/cafe-con-leche-400.jpg   400w,
+                      images/cafe-con-leche-800.jpg 800w
                     "
                     sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
                     alt="Café con leche"
@@ -840,13 +956,47 @@
           &copy; <span id="year"></span> Repostería Dulce Bueno. Todos los
           derechos reservados.
         </p>
+        <button type="button" class="footer__cookie" id="cookie-settings" hidden>
+          Configuración de cookies
+        </button>
       </div>
     </footer>
 
     <button class="arriba" type="button" aria-label="Volver arriba">↑</button>
 
+    <!-- Consentimiento de analítica -->
+    <div
+      class="cookie-banner"
+      id="cookie-banner"
+      role="dialog"
+      aria-modal="false"
+      aria-labelledby="cookie-title"
+      hidden
+    >
+      <div class="cookie-banner__inner">
+        <div>
+          <p class="cookie-banner__title" id="cookie-title">
+            Cookies y analítica
+          </p>
+          <p class="cookie-banner__text">
+            Usamos analítica para entender cómo se utiliza la web y mejorar la
+            experiencia. Puedes aceptar o rechazar su uso.
+          </p>
+        </div>
+        <div class="cookie-banner__actions">
+          <button type="button" class="btn btn-primary" id="cookie-accept">
+            Aceptar
+          </button>
+          <button type="button" class="btn btn-outline" id="cookie-reject">
+            Rechazar
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script src="./js/navegacion-scroll.js"></script>
     <script src="js/scroll.js"></script>
+    <script src="js/analytics.js"></script>
     <script src="js/form.js"></script>
 
     <!-- Bootstrap JS -->
@@ -855,6 +1005,15 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Animaciones: GSAP y ScrollTrigger servidos localmente -->
+    <script src="js/vendor/gsap.min.js" defer fetchpriority="low"></script>
+    <script
+      src="js/vendor/ScrollTrigger.min.js"
+      defer
+      fetchpriority="low"
+    ></script>
+    <script src="js/animaciones.js" defer></script>
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
