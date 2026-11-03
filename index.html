@@ -3,14 +3,71 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      name="description"
+      content="Repostería artesanal Dulce Bueno: pasteles personalizados, cupcakes, galletas, jugos naturales y café. Pedidos para cumpleaños, bodas y eventos especiales."
     />
-    <title>Reposteria El Aventurero</title>
-    <link href="css/site.css" rel="stylesheet" />
-    <link href="css/navegacion-scroll.css" rel="stylesheet" />
-    <link href="css/card.css" rel="stylesheet" />
+    <meta name="theme-color" content="#7a3f1d" />
+    <title>Dulce Bueno | Repostería Artesanal</title>
+
+    <!-- Open Graph y redes sociales -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Dulce Bueno" />
+    <meta
+      property="og:title"
+      content="Dulce Bueno | Repostería Artesanal"
+    />
+    <meta
+      property="og:description"
+      content="Pasteles personalizados, cupcakes, galletas, jugos naturales y café. Repostería artesanal para tus momentos especiales."
+    />
+    <meta
+      property="og:image"
+      content="https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop"
+    />
+    <meta property="og:image:alt" content="Pastel artesanal de Dulce Bueno" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Dulce Bueno | Repostería Artesanal"
+    />
+    <meta
+      name="twitter:description"
+      content="Pasteles personalizados, cupcakes, galletas, jugos naturales y café. Repostería artesanal para tus momentos especiales."
+    />
+    <meta
+      name="twitter:image"
+      content="https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop"
+    />
+
+    <!-- Preconexiones y precarga de la imagen principal -->
+    <link rel="preconnect" href="https://images.pexels.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="preload"
+      as="image"
+      href="https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop"
+      imagesrcset="
+        https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop   800w,
+        https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop 1200w
+      "
+      imagesizes="(max-width: 991.98px) 100vw, 560px"
+    />
+
+    <!-- Datos estructurados -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Bakery",
+        "name": "Dulce Bueno",
+        "description": "Repostería artesanal especializada en pasteles personalizados, cupcakes, galletas, jugos naturales y café.",
+        "image": "https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop",
+        "priceRange": "$$",
+        "servesCuisine": "Repostería artesanal"
+      }
+    </script>
 
     <!-- Bootstrap CSS -->
     <link
@@ -19,21 +76,24 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <!-- Link Swiper's CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+
+    <!-- Estilos propios -->
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="css/navegacion-scroll.css" rel="stylesheet" />
+    <link href="css/card.css" rel="stylesheet" />
   </head>
 
   <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
     <!-- Navegación -->
-    <nav
-      class="navbar navbar-expand-lg fixed-top"
-      style="background-color: rgb(213, 154, 77)"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">Repostería El Aventurero</a>
+    <nav class="navbar navbar-expand-lg fixed-top" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand" href="#inicio">
+          <span class="brand-mark" aria-hidden="true">DB</span>
+          <span>Dulce Bueno</span>
+        </a>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -41,327 +101,763 @@
           data-bs-target="#navbarNav"
           aria-controls="navbarNav"
           aria-expanded="false"
-          aria-label="Toggle navigation"
+          aria-label="Abrir menú"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+              <a class="nav-link active" aria-current="location" href="#inicio">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">Sobre Nosotros</a>
+              <a class="nav-link" href="#about">Sobre nosotros</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#productos">Productos</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#testimonios">Testimonios</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <a class="btn btn-navbar" href="#contacto">Haz tu pedido</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- carrusel/slider -->
-    <div
-      id="carouselExampleCaptions"
-      class="carousel slide mb-5"
-      data-bs-ride="false"
-    >
-      <div class="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="0"
-          class="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img
-            src="https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg"
-            class="d-block w-100"
-            alt="..."
-          />
-          <div class="carousel-caption d-none d-md-block text-dark">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+    <!-- Hero -->
+    <header id="inicio" class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow">Repostería artesanal</p>
+          <h1 class="hero__title">Endulza tus momentos especiales</h1>
+          <p class="hero__text">
+            Pasteles personalizados, cupcakes, galletas y café elaborados a mano
+            con ingredientes frescos y recetas caseras.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn-primary" href="#productos">Ver productos</a>
+            <a class="btn btn-outline" href="#contacto">Haz tu pedido</a>
           </div>
+
+          <ul class="hero__highlights">
+            <li>Ingredientes frescos</li>
+            <li>Recetas caseras</li>
+            <li>Diseños personalizados</li>
+          </ul>
         </div>
-        <div class="carousel-item">
+
+        <div class="hero__media">
           <img
-            src="https://images.pexels.com/photos/29978692/pexels-photo-29978692.jpeg"
-            class="d-block w-100"
-            alt="..."
+            src="https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop"
+            srcset="
+              https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop   800w,
+              https://images.pexels.com/photos/30233124/pexels-photo-30233124.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop 1200w
+            "
+            sizes="(max-width: 991.98px) 100vw, 560px"
+            alt="Pastel artesanal decorado de Dulce Bueno"
+            width="1200"
+            height="900"
+            fetchpriority="high"
           />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img
-            src="https://images.pexels.com/photos/29978682/pexels-photo-29978682.jpeg"
-            class="d-block w-100"
-            alt="..."
-          />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+          <div class="hero__badge">
+            <span class="hero__badge-icon" aria-hidden="true">♥</span>
+            <span>Hecho a mano<br /><strong>con amor</strong></span>
           </div>
         </div>
       </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+    </header>
 
-    <main class="">
-      <!-- Sobre Nosotros -->
-      <article class="articulo" id="about">
-        <!-- <p class="articulo__entradilla"></p> -->
-        <h1>Sobre Nosotros</h1>
-        <p>
-          En Dulce Bueno creemos que cada postre cuenta una historia. Somos una
-          repostería artesanal dedicada a crear momentos dulces e inolvidables
-          con cada bocado. Elaboramos nuestros productos con ingredientes
-          frescos, recetas caseras y un toque de amor que se nota en el sabor.
-          Desde pasteles personalizados hasta cupcakes y galletas decoradas,
-          combinamos creatividad, calidad y pasión para ofrecerte lo mejor de la
-          repostería moderna sin perder la esencia tradicional. Nuestro objetivo
-          es endulzar tu día y hacer que cada ocasión sea simplemente… dulce y
-          buena.
-        </p>
-        <div class="imagen">
-          <!-- <img src="images/img2.jpg" alt="El Fram y los perros" /> -->
-        </div>
-      </article>
+    <main id="contenido" tabindex="-1">
+      <!-- Sobre nosotros -->
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section__header">
+            <p class="eyebrow">Nuestra historia</p>
+            <h2 class="section__title">Sobre nosotros</h2>
+          </div>
 
-      <!-- productos -->
-      <article class="articulo" id="productos">
-        <h1>Productos</h1>
-        <p>
-          En Dulce Bueno encontrarás una deliciosa variedad de postres hechos
-          con dedicación y los mejores ingredientes. Ofrecemos pasteles
-          personalizados para toda ocasión —cumpleaños, bodas, aniversarios y
-          eventos especiales—, así como cupcakes, galletas decoradas, brownies,
-          tartas frutales, cheesecakes y postres fríos. Cada creación es
-          elaborada de forma artesanal, cuidando los detalles en sabor, textura
-          y presentación.
-        </p>
+          <div class="about__grid">
+            <div class="about__content">
+              <p class="lead">
+                En Dulce Bueno creemos que cada postre cuenta una historia.
+              </p>
+              <p>
+                Somos una repostería artesanal dedicada a crear momentos dulces
+                e inolvidables con cada bocado. Elaboramos nuestros productos con
+                ingredientes frescos, recetas caseras y un toque de amor que se
+                nota en el sabor.
+              </p>
+              <p>
+                Desde pasteles personalizados hasta cupcakes y galletas
+                decoradas, combinamos creatividad, calidad y pasión para
+                ofrecerte lo mejor de la repostería moderna sin perder la esencia
+                tradicional.
+              </p>
 
-        <h2>Pasteles:</h2>
-        <!-- Swiper -->
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img
-                src="https://images.pexels.com/photos/7525196/pexels-photo-7525196.jpeg"
-                alt="Producto 2"
-              />
-              <p>Pastel de Vainilla</p>
-              <p>precio: $18</p>
-              <button>Agregar al carrito</button>
+              <ul class="check-list">
+                <li>Ingredientes frescos y de calidad</li>
+                <li>Recetas caseras y artesanales</li>
+                <li>Diseños adaptados a tu ocasión</li>
+              </ul>
             </div>
-            <div class="swiper-slide">
+
+            <div class="about__media">
               <img
-                src="https://images.pexels.com/photos/18382832/pexels-photo-18382832.jpeg"
-                alt="Producto 3"
+                src="images/postres-artesanales-1200.jpg"
+                srcset="
+                  images/postres-artesanales-800.jpg   800w,
+                  images/postres-artesanales-1200.jpg 1200w
+                "
+                sizes="(max-width: 991.98px) 100vw, 540px"
+                alt="Postres artesanales preparados en Dulce Bueno"
+                width="1200"
+                height="812"
+                loading="lazy"
+                decoding="async"
               />
-              <p>Pastel de Fresa</p>
-              <p>precio: $22</p>
-              <button>Agregar al carrito</button>
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="https://images.pexels.com/photos/10342005/pexels-photo-10342005.jpeg"
-                alt="Producto 4"
-              />
-              <p>Pastel de Red Velvet</p>
-              <p>precio: $25</p>
-              <button>Agregar al carrito</button>
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="https://images.pexels.com/photos/6133311/pexels-photo-6133311.jpeg"
-                alt="Producto 5"
-              />
-              <p>Pastel de Limón</p>
-              <p>precio: $19</p>
-              <button>Agregar al carrito</button>
             </div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-scrollbar"></div>
-          <div class="swiper-pagination"></div>
         </div>
+      </section>
 
-        <h2>Jugos Naturales:</h2>
-        <!-- Swiper -->
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img
-                src="https://images.pexels.com/photos/17612805/pexels-photo-17612805.jpeg"
-                alt="Producto 2"
-              />
-              <p>Jugo de manzana</p>
-              <p>precio: $18</p>
-              <button>Agregar al carrito</button>
+      <!-- Productos -->
+      <section class="section section--products" id="productos">
+        <div class="container">
+          <div class="section__header">
+            <p class="eyebrow">Nuestro catálogo</p>
+            <h2 class="section__title">Productos</h2>
+            <p class="section__lead">
+              Una deliciosa variedad de postres hechos con dedicación y los
+              mejores ingredientes. Cada creación es elaborada de forma
+              artesanal, cuidando el sabor, la textura y la presentación.
+            </p>
+          </div>
+
+          <!-- Pasteles -->
+          <div class="category">
+            <div class="category__header">
+              <h3 class="category__title">Pasteles</h3>
+              <span class="category__count">4 opciones</span>
             </div>
-            <div class="swiper-slide">
-              <img
-                src="https://images.pexels.com/photos/33283858/pexels-photo-33283858.jpeg"
-                alt="Producto 3"
-              />
-              <p>Jugo de Fresa</p>
-              <p>precio: $22</p>
-              <button>Agregar al carrito</button>
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="https://images.pexels.com/photos/20104011/pexels-photo-20104011.jpeg"
-                alt="Producto 4"
-              />
-              <p>Jugo de morisoñando</p>
-              <p>precio: $25</p>
-              <button>Agregar al carrito</button>
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="https://images.pexels.com/photos/30956225/pexels-photo-30956225.jpeg"
-                alt="Producto 5"
-              />
-              <p>Jugo de Limón</p>
-              <p>precio: $19</p>
-              <button>Agregar al carrito</button>
+
+            <div class="product-grid">
+              <article class="product-card">
+                <div class="product-card__media">
+                  <img
+                    src="https://images.pexels.com/photos/7525196/pexels-photo-7525196.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    srcset="
+                      https://images.pexels.com/photos/7525196/pexels-photo-7525196.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
+                      https://images.pexels.com/photos/7525196/pexels-photo-7525196.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                    "
+                    sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
+                    alt="Pastel de vainilla decorado"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="product-card__body">
+                  <div class="product-card__top">
+                    <h4 class="product-card__title">Pastel de Vainilla</h4>
+                    <span class="product-card__price">$18</span>
+                  </div>
+                  <p class="product-card__desc">
+                    Bizcocho esponjoso con crema de vainilla.
+                  </p>
+                  <a
+                    class="btn btn-card"
+                    href="#contacto"
+                    aria-label="Pedir Pastel de Vainilla"
+                    >Pedir <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <img
+                    src="https://images.pexels.com/photos/18382832/pexels-photo-18382832.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    srcset="
+                      https://images.pexels.com/photos/18382832/pexels-photo-18382832.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
+                      https://images.pexels.com/photos/18382832/pexels-photo-18382832.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                    "
+                    sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
+                    alt="Pastel de fresa con fresas frescas"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="product-card__body">
+                  <div class="product-card__top">
+                    <h4 class="product-card__title">Pastel de Fresa</h4>
+                    <span class="product-card__price">$22</span>
+                  </div>
+                  <p class="product-card__desc">
+                    Capas de bizcocho y fresas frescas.
+                  </p>
+                  <a
+                    class="btn btn-card"
+                    href="#contacto"
+                    aria-label="Pedir Pastel de Fresa"
+                    >Pedir <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <img
+                    src="https://images.pexels.com/photos/10342005/pexels-photo-10342005.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    srcset="
+                      https://images.pexels.com/photos/10342005/pexels-photo-10342005.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
+                      https://images.pexels.com/photos/10342005/pexels-photo-10342005.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                    "
+                    sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
+                    alt="Pastel red velvet con frosting"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="product-card__body">
+                  <div class="product-card__top">
+                    <h4 class="product-card__title">Pastel de Red Velvet</h4>
+                    <span class="product-card__price">$25</span>
+                  </div>
+                  <p class="product-card__desc">
+                    Terciopelo rojo con frosting de queso crema.
+                  </p>
+                  <a
+                    class="btn btn-card"
+                    href="#contacto"
+                    aria-label="Pedir Pastel de Red Velvet"
+                    >Pedir <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <img
+                    src="https://images.pexels.com/photos/6133311/pexels-photo-6133311.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    srcset="
+                      https://images.pexels.com/photos/6133311/pexels-photo-6133311.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
+                      https://images.pexels.com/photos/6133311/pexels-photo-6133311.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                    "
+                    sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
+                    alt="Pastel de limón glaseado"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="product-card__body">
+                  <div class="product-card__top">
+                    <h4 class="product-card__title">Pastel de Limón</h4>
+                    <span class="product-card__price">$19</span>
+                  </div>
+                  <p class="product-card__desc">
+                    Toque cítrico con un glaseado suave.
+                  </p>
+                  <a
+                    class="btn btn-card"
+                    href="#contacto"
+                    aria-label="Pedir Pastel de Limón"
+                    >Pedir <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
             </div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-scrollbar"></div>
-          <div class="swiper-pagination"></div>
-        </div>
 
-        <h2>Café:</h2>
-        <!-- Swiper -->
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img
-                src="https://images.pexels.com/photos/16230546/pexels-photo-16230546.jpeg"
-                alt="Producto 2"
-              />
-              <p>café espresso</p>
-              <p>precio: $18</p>
-              <button>Agregar al carrito</button>
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="https://images.pexels.com/photos/16230539/pexels-photo-16230539.jpeg"
-                alt="Producto 3"
-              />
-              <p>café americano</p>
-              <p>precio: $22</p>
-              <button>Agregar al carrito</button>
+          <!-- Jugos naturales -->
+          <div class="category">
+            <div class="category__header">
+              <h3 class="category__title">Jugos naturales</h3>
+              <span class="category__count">4 opciones</span>
             </div>
 
-            <div class="swiper-slide">
-              <img
-                src="https://images.pexels.com/photos/13518238/pexels-photo-13518238.jpeg"
-                alt="Producto 5"
-              />
-              <p>café con leche</p>
-              <p>precio: $19</p>
-              <button>Agregar al carrito</button>
+            <div class="product-grid">
+              <article class="product-card">
+                <div class="product-card__media">
+                  <img
+                    src="https://images.pexels.com/photos/17612805/pexels-photo-17612805.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    srcset="
+                      https://images.pexels.com/photos/17612805/pexels-photo-17612805.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
+                      https://images.pexels.com/photos/17612805/pexels-photo-17612805.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                    "
+                    sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
+                    alt="Jugo natural de manzana"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="product-card__body">
+                  <div class="product-card__top">
+                    <h4 class="product-card__title">Jugo de Manzana</h4>
+                    <span class="product-card__price">$18</span>
+                  </div>
+                  <p class="product-card__desc">
+                    Refrescante, natural y lleno de sabor.
+                  </p>
+                  <a
+                    class="btn btn-card"
+                    href="#contacto"
+                    aria-label="Pedir Jugo de Manzana"
+                    >Pedir <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <img
+                    src="https://images.pexels.com/photos/33283858/pexels-photo-33283858.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    srcset="
+                      https://images.pexels.com/photos/33283858/pexels-photo-33283858.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
+                      https://images.pexels.com/photos/33283858/pexels-photo-33283858.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                    "
+                    sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
+                    alt="Jugo natural de fresa"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="product-card__body">
+                  <div class="product-card__top">
+                    <h4 class="product-card__title">Jugo de Fresa</h4>
+                    <span class="product-card__price">$22</span>
+                  </div>
+                  <p class="product-card__desc">
+                    Fresas frescas con un toque dulce.
+                  </p>
+                  <a
+                    class="btn btn-card"
+                    href="#contacto"
+                    aria-label="Pedir Jugo de Fresa"
+                    >Pedir <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <img
+                    src="https://images.pexels.com/photos/20104011/pexels-photo-20104011.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    srcset="
+                      https://images.pexels.com/photos/20104011/pexels-photo-20104011.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
+                      https://images.pexels.com/photos/20104011/pexels-photo-20104011.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                    "
+                    sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
+                    alt="Jugo de morisoñando"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="product-card__body">
+                  <div class="product-card__top">
+                    <h4 class="product-card__title">Jugo de Morisoñando</h4>
+                    <span class="product-card__price">$25</span>
+                  </div>
+                  <p class="product-card__desc">
+                    La receta de la casa, bien fría.
+                  </p>
+                  <a
+                    class="btn btn-card"
+                    href="#contacto"
+                    aria-label="Pedir Jugo de Morisoñando"
+                    >Pedir <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <img
+                    src="https://images.pexels.com/photos/30956225/pexels-photo-30956225.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    srcset="
+                      https://images.pexels.com/photos/30956225/pexels-photo-30956225.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
+                      https://images.pexels.com/photos/30956225/pexels-photo-30956225.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                    "
+                    sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
+                    alt="Jugo natural de limón"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="product-card__body">
+                  <div class="product-card__top">
+                    <h4 class="product-card__title">Jugo de Limón</h4>
+                    <span class="product-card__price">$19</span>
+                  </div>
+                  <p class="product-card__desc">
+                    Cítrico, fresco y equilibrado.
+                  </p>
+                  <a
+                    class="btn btn-card"
+                    href="#contacto"
+                    aria-label="Pedir Jugo de Limón"
+                    >Pedir <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
             </div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-scrollbar"></div>
-          <div class="swiper-pagination"></div>
+
+          <!-- Café -->
+          <div class="category">
+            <div class="category__header">
+              <h3 class="category__title">Café</h3>
+              <span class="category__count">3 opciones</span>
+            </div>
+
+            <div class="product-grid">
+              <article class="product-card">
+                <div class="product-card__media">
+                  <img
+                    src="https://images.pexels.com/photos/16230546/pexels-photo-16230546.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    srcset="
+                      https://images.pexels.com/photos/16230546/pexels-photo-16230546.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
+                      https://images.pexels.com/photos/16230546/pexels-photo-16230546.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                    "
+                    sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
+                    alt="Café espresso"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="product-card__body">
+                  <div class="product-card__top">
+                    <h4 class="product-card__title">Café Espresso</h4>
+                    <span class="product-card__price">$18</span>
+                  </div>
+                  <p class="product-card__desc">
+                    Intenso, aromático y recién preparado.
+                  </p>
+                  <a
+                    class="btn btn-card"
+                    href="#contacto"
+                    aria-label="Pedir Café Espresso"
+                    >Pedir <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <img
+                    src="https://images.pexels.com/photos/16230539/pexels-photo-16230539.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    srcset="
+                      https://images.pexels.com/photos/16230539/pexels-photo-16230539.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
+                      https://images.pexels.com/photos/16230539/pexels-photo-16230539.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                    "
+                    sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
+                    alt="Café americano"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="product-card__body">
+                  <div class="product-card__top">
+                    <h4 class="product-card__title">Café Americano</h4>
+                    <span class="product-card__price">$22</span>
+                  </div>
+                  <p class="product-card__desc">
+                    Suave, para disfrutar sin prisa.
+                  </p>
+                  <a
+                    class="btn btn-card"
+                    href="#contacto"
+                    aria-label="Pedir Café Americano"
+                    >Pedir <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <img
+                    src="https://images.pexels.com/photos/13518238/pexels-photo-13518238.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    srcset="
+                      https://images.pexels.com/photos/13518238/pexels-photo-13518238.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop   400w,
+                      https://images.pexels.com/photos/13518238/pexels-photo-13518238.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w
+                    "
+                    sizes="(max-width: 575.98px) 100vw, (max-width: 991.98px) 50vw, 260px"
+                    alt="Café con leche"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="product-card__body">
+                  <div class="product-card__top">
+                    <h4 class="product-card__title">Café con Leche</h4>
+                    <span class="product-card__price">$19</span>
+                  </div>
+                  <p class="product-card__desc">
+                    Cremoso y equilibrado, con leche vaporizada.
+                  </p>
+                  <a
+                    class="btn btn-card"
+                    href="#contacto"
+                    aria-label="Pedir Café con Leche"
+                    >Pedir <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
-      </article>
+      </section>
 
-      <!-- contacto -->
-      <article class="articulo" id="contacto">
-        <h1>Contactos</h1>
-        <p>
-          ¿Tienes alguna pregunta o quieres hacer un pedido personalizado? ¡Nos
-          encantaría saber de ti! Puedes contactarnos a través de los siguientes
-          medios:
-        </p>
-        <form id="form">
-          <label for="name">Nombre:</label><br />
-          <input type="text" id="name" name="name" required /><br /><br />
+      <!-- Testimonios -->
+      <!-- NOTA: reseñas de ejemplo. Reemplazar por opiniones reales de clientes. -->
+      <section class="section section--testimonials" id="testimonios">
+        <div class="container">
+          <div class="section__header">
+            <p class="eyebrow">Lo que dicen nuestros clientes</p>
+            <h2 class="section__title">Testimonios</h2>
+            <p class="section__lead">
+              Cada pedido es una historia. Estas son algunas experiencias de
+              quienes ya han probado nuestros postres.
+            </p>
+          </div>
 
-          <label for="email">Correo Electrónico:</label><br />
-          <input type="email" id="email" name="email" required /><br /><br />
+          <div class="testimonial-grid">
+            <figure class="testimonial">
+              <div class="testimonial__stars" role="img" aria-label="5 de 5 estrellas">
+                <span aria-hidden="true">★★★★★</span>
+              </div>
+              <blockquote class="testimonial__quote">
+                <p>
+                  El pastel de cumpleaños quedó exactamente como lo imaginaba.
+                  ¡Todos en la fiesta preguntaron por la repostería!
+                </p>
+              </blockquote>
+              <figcaption class="testimonial__author">
+                <span class="testimonial__avatar" aria-hidden="true">M</span>
+                <span>
+                  <strong>María G.</strong>
+                  <span class="testimonial__detail">Cumpleaños infantil</span>
+                </span>
+              </figcaption>
+            </figure>
 
-          <label for="message">Mensaje:</label><br />
-          <textarea id="message" name="message" rows="4" required></textarea
-          ><br /><br />
+            <figure class="testimonial">
+              <div class="testimonial__stars" role="img" aria-label="5 de 5 estrellas">
+                <span aria-hidden="true">★★★★★</span>
+              </div>
+              <blockquote class="testimonial__quote">
+                <p>
+                  Pedimos cupcakes para una boda y fueron el detalle perfecto.
+                  Delicados, frescos y con una presentación impecable.
+                </p>
+              </blockquote>
+              <figcaption class="testimonial__author">
+                <span class="testimonial__avatar" aria-hidden="true">J</span>
+                <span>
+                  <strong>Javier R.</strong>
+                  <span class="testimonial__detail">Boda</span>
+                </span>
+              </figcaption>
+            </figure>
 
-          <button type="submit">Enviar</button>
-        </form>
+            <figure class="testimonial">
+              <div class="testimonial__stars" role="img" aria-label="5 de 5 estrellas">
+                <span aria-hidden="true">★★★★★</span>
+              </div>
+              <blockquote class="testimonial__quote">
+                <p>
+                  Atención cercana desde el primer mensaje. Me ayudaron a elegir
+                  el postre ideal para una celebración pequeña y acertaron.
+                </p>
+              </blockquote>
+              <figcaption class="testimonial__author">
+                <span class="testimonial__avatar" aria-hidden="true">L</span>
+                <span>
+                  <strong>Lucía P.</strong>
+                  <span class="testimonial__detail">Aniversario</span>
+                </span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
 
-        <button class="arriba">↑</button>
-      </article>
+      <!-- Contacto -->
+      <section class="section" id="contacto">
+        <div class="container">
+          <div class="contact__grid">
+            <div class="contact__info">
+              <p class="eyebrow">Hablemos</p>
+              <h2 class="section__title">Contacto</h2>
+              <p>
+                ¿Tienes alguna pregunta o quieres hacer un pedido personalizado?
+                ¡Nos encantaría saber de ti! Cuéntanos qué necesitas y te
+                responderemos pronto.
+              </p>
+
+              <ul class="contact__list">
+                <li>
+                  <strong>Pedidos personalizados</strong>
+                  <span>Pasteles, cupcakes y galletas para tu evento.</span>
+                </li>
+                <li>
+                  <strong>Eventos y celebraciones</strong>
+                  <span>Cumpleaños, bodas, aniversarios y más.</span>
+                </li>
+                <li>
+                  <strong>Atención cercana</strong>
+                  <span>Te acompañamos para elegir la mejor opción.</span>
+                </li>
+              </ul>
+            </div>
+
+            <form
+              id="form"
+              class="contact__form"
+              aria-labelledby="contact-form-title"
+              novalidate
+            >
+              <h3 class="contact__form-title" id="contact-form-title">
+                Escríbenos
+              </h3>
+
+              <p class="form-hint">
+                Los campos marcados con <span aria-hidden="true">*</span> son
+                obligatorios.
+              </p>
+
+              <div class="form-field">
+                <label for="name">
+                  Nombre <span class="form-required" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  autocomplete="name"
+                  placeholder="Tu nombre"
+                  aria-describedby="name-error"
+                  required
+                />
+                <p class="form-error" id="name-error" role="alert"></p>
+              </div>
+
+              <div class="form-field">
+                <label for="email">
+                  Correo electrónico
+                  <span class="form-required" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="tu@correo.com"
+                  aria-describedby="email-error"
+                  required
+                />
+                <p class="form-error" id="email-error" role="alert"></p>
+              </div>
+
+              <div class="form-field">
+                <label for="message">
+                  Mensaje <span class="form-required" aria-hidden="true">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="Cuéntanos qué postre necesitas..."
+                  aria-describedby="message-error"
+                  required
+                ></textarea>
+                <p class="form-error" id="message-error" role="alert"></p>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                Enviar mensaje
+              </button>
+
+              <p
+                id="form-status"
+                class="form-status"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
+
     <footer class="footer">
-      <p>
-        &copy;
-        <script>
-          document.write(new Date().getFullYear());
-        </script>
-        Reposteria Dulce Bueno. Todos los derechos reservados.
-      </p>
+      <div class="container footer__inner">
+        <div>
+          <a class="footer__brand" href="#inicio">Dulce Bueno</a>
+          <p class="footer__tagline">
+            Repostería artesanal para tus momentos especiales.
+          </p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Enlaces del pie de página">
+          <a href="#about">Sobre nosotros</a>
+          <a href="#productos">Productos</a>
+          <a href="#testimonios">Testimonios</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </div>
+
+      <div class="container footer__bottom">
+        <p>
+          &copy; <span id="year"></span> Repostería Dulce Bueno. Todos los
+          derechos reservados.
+        </p>
+      </div>
     </footer>
 
-    <!-- navagacion scroll -->
-    <script src="./js/navegacion-scroll.js"></script>
+    <button class="arriba" type="button" aria-label="Volver arriba">↑</button>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/swiper.js"></script>
-    <script src="/js/scroll.js"></script>
-    <!-- bootstrap Js -->
+    <script src="./js/navegacion-scroll.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/form.js"></script>
+
+    <!-- Bootstrap JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>

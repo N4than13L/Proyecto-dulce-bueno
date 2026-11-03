@@ -1,13 +1,22 @@
-const btnArriba = document.querySelector(".arriba");
+(function () {
+  var btnArriba = document.querySelector(".arriba");
+  if (!btnArriba) return;
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 200) {
-    btnArriba.classList.add("visible");
-  } else {
-    btnArriba.classList.remove("visible");
+  function actualizarBoton() {
+    btnArriba.classList.toggle("visible", window.scrollY > 500);
   }
-});
 
-btnArriba.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+  actualizarBoton();
+  window.addEventListener("scroll", actualizarBoton, { passive: true });
+
+  btnArriba.addEventListener("click", function () {
+    var prefiereMenosMovimiento = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    window.scrollTo({
+      top: 0,
+      behavior: prefiereMenosMovimiento ? "auto" : "smooth",
+    });
+  });
+})();

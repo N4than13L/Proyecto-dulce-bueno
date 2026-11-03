@@ -1,13 +1,102 @@
-.navegacion {
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(196, 140, 20, 0.1);
-  transition: background-color 0.3s;
+/* =========================================================
+   Navegación
+   ========================================================= */
+.navbar {
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+  background-color: rgba(253, 248, 242, 0.96);
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.navegacion.scroll {
-  background-color: rgb(169, 118, 9);
+.navbar.scroll {
+  background-color: rgba(253, 248, 242, 0.99);
+  border-bottom-color: var(--color-border);
+  box-shadow: 0 4px 18px rgba(61, 35, 20, 0.08);
+}
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: var(--color-primary-dark);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.navbar-brand:hover {
+  color: var(--color-primary);
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.navbar .navbar-nav .nav-link {
+  padding: 0.5rem 0.85rem;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link.active {
+  color: var(--color-primary);
+}
+
+.navbar .navbar-nav .nav-link.active {
+  font-weight: 700;
+}
+
+.navbar .btn-navbar {
+  margin-left: 0.5rem;
+  padding: 0.6rem 1.15rem;
+  background-color: var(--color-primary);
+  border-radius: 999px;
+  box-shadow: none;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.navbar .btn-navbar:hover {
+  background-color: var(--color-primary-dark);
+  color: #ffffff;
+}
+
+.navbar-toggler {
+  padding: 0.35rem 0.55rem;
+  border: 1px solid var(--color-border);
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+@media (max-width: 991.98px) {
+  .navbar .navbar-nav {
+    gap: 0.25rem;
+    padding-top: 0.75rem;
+  }
+
+  .navbar .btn-navbar {
+    display: inline-flex;
+    margin: 0.5rem 0 0;
+  }
 }
